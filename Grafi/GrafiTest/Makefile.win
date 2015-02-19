@@ -1,0 +1,48 @@
+# Project: GrafiTest
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o NodoConnessoTest.o NodoTest.o GrafoListaTest.o StringToolTest.o DijkstraTest.o ArcoTest.o $(RES)
+LINKOBJ  = main.o NodoConnessoTest.o NodoTest.o GrafoListaTest.o StringToolTest.o DijkstraTest.o ArcoTest.o $(RES)
+LIBS =  -g ../Grafi.a ../CodaLib/CodaLib.a  
+INCS =  -I"C:/Dev-Cpp/include"  -I".."  -I"../CodaLib" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I".."  -I"../CodaLib" 
+BIN  = GrafiTest.exe
+CXXFLAGS = $(CXXINCS)   -g
+CFLAGS = $(INCS)   -g
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before GrafiTest.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "GrafiTest.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+NodoConnessoTest.o: NodoConnessoTest.cpp
+	$(CPP) -c NodoConnessoTest.cpp -o NodoConnessoTest.o $(CXXFLAGS)
+
+NodoTest.o: NodoTest.cpp
+	$(CPP) -c NodoTest.cpp -o NodoTest.o $(CXXFLAGS)
+
+GrafoListaTest.o: GrafoListaTest.cpp
+	$(CPP) -c GrafoListaTest.cpp -o GrafoListaTest.o $(CXXFLAGS)
+
+StringToolTest.o: StringToolTest.cpp
+	$(CPP) -c StringToolTest.cpp -o StringToolTest.o $(CXXFLAGS)
+
+DijkstraTest.o: DijkstraTest.cpp
+	$(CPP) -c DijkstraTest.cpp -o DijkstraTest.o $(CXXFLAGS)
+
+ArcoTest.o: ArcoTest.cpp
+	$(CPP) -c ArcoTest.cpp -o ArcoTest.o $(CXXFLAGS)

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodi>
+    <nodo nome="A">
+        <nodoconnesso nome="B">1</nodoconnesso>
+        <nodoconnesso nome="D">4</nodoconnesso>
+    </nodo>
+    <nodo nome="B">
+        <nodoconnesso nome="A">1</nodoconnesso>
+        <nodoconnesso nome="C">1</nodoconnesso>
+        <nodoconnesso nome="E">8</nodoconnesso>
+    </nodo>
+    <nodo nome="C">
+        <nodoconnesso nome="B">1</nodoconnesso>
+        <nodoconnesso nome="D">1</nodoconnesso>
+        <nodoconnesso nome="E">3</nodoconnesso>
+    </nodo>
+    <nodo nome="D">
+        <nodoconnesso nome="A">4</nodoconnesso>
+        <nodoconnesso nome="C">1</nodoconnesso>
+        <nodoconnesso nome="E">1</nodoconnesso>
+    </nodo>
+    <nodo nome="E">
+        <nodoconnesso nome="B">8</nodoconnesso>
+        <nodoconnesso nome="C">3</nodoconnesso>
+        <nodoconnesso nome="D">1</nodoconnesso>
+    </nodo>
+</nodi>

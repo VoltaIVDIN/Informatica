@@ -1,0 +1,61 @@
+# Project: Grafi
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Grafo.o Nodo.o NodoConnesso.o StringTool.o Dijkstra.o Arco.o GrafoInputTxt.o GrafoInputXml.o GrafoInputCon.o GrafoLista.o GrafoMatrice.o $(RES)
+LINKOBJ  = Grafo.o Nodo.o NodoConnesso.o StringTool.o Dijkstra.o Arco.o GrafoInputTxt.o GrafoInputXml.o GrafoInputCon.o GrafoLista.o GrafoMatrice.o $(RES)
+LIBS =  -g CodaLib/CodaLib.a  
+INCS =  -I"C:/Dev-Cpp/include"  -I"C:/Users/Admin/Documents/Volta/informatica 4^D/Informatica/Progetti/Grafi/CodaLib" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I"C:/Users/Admin/Documents/Volta/informatica 4^D/Informatica/Progetti/Grafi/CodaLib" 
+BIN  = Grafi.a
+CXXFLAGS = $(CXXINCS)   -g
+CFLAGS = $(INCS)   -g
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Grafi.a all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(LINKOBJ)
+	ar r $(BIN) $(LINKOBJ)
+	ranlib $(BIN)
+
+Grafo.o: Grafo.cpp
+	$(CPP) -c Grafo.cpp -o Grafo.o $(CXXFLAGS)
+
+Nodo.o: Nodo.cpp
+	$(CPP) -c Nodo.cpp -o Nodo.o $(CXXFLAGS)
+
+NodoConnesso.o: NodoConnesso.cpp
+	$(CPP) -c NodoConnesso.cpp -o NodoConnesso.o $(CXXFLAGS)
+
+StringTool.o: StringTool.cpp
+	$(CPP) -c StringTool.cpp -o StringTool.o $(CXXFLAGS)
+
+Dijkstra.o: Dijkstra.cpp
+	$(CPP) -c Dijkstra.cpp -o Dijkstra.o $(CXXFLAGS)
+
+Arco.o: Arco.cpp
+	$(CPP) -c Arco.cpp -o Arco.o $(CXXFLAGS)
+
+GrafoInputTxt.o: GrafoInputTxt.cpp
+	$(CPP) -c GrafoInputTxt.cpp -o GrafoInputTxt.o $(CXXFLAGS)
+
+GrafoInputXml.o: GrafoInputXml.cpp
+	$(CPP) -c GrafoInputXml.cpp -o GrafoInputXml.o $(CXXFLAGS)
+
+GrafoInputCon.o: GrafoInputCon.cpp
+	$(CPP) -c GrafoInputCon.cpp -o GrafoInputCon.o $(CXXFLAGS)
+
+GrafoLista.o: GrafoLista.cpp
+	$(CPP) -c GrafoLista.cpp -o GrafoLista.o $(CXXFLAGS)
+
+GrafoMatrice.o: GrafoMatrice.cpp
+	$(CPP) -c GrafoMatrice.cpp -o GrafoMatrice.o $(CXXFLAGS)
